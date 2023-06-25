@@ -1,0 +1,36 @@
+// Create a new store
+const createStore = (req, res, next) => {
+  const { name, address, created_date, logo } = req.body;
+
+  // Convert the base64 logo string to a buffer
+  const logoBuffer = Buffer.from(logo, 'base64');
+
+  // Generate a unique filename for the logo
+  const filename = `logo_${Date.now()}.png`;
+
+  // Save the logo buffer to a file
+  fs.writeFile(filename, logoBuffer, (err) => {
+    if (err) {
+      next(new BadRequestError('Error saving logo'));
+    } else {
+      const query = 'INSERT INTO stores (name, logo, address, created_date) VALUES (?, ?, ?, ?)';
+      pool.query(query, [name, filename, address, created_date], (error, results) => {
+        if (error) {
+          next(new NotFoundError('Error inserting store into the database!'));
+        } else {
+          res.status(201).json({ message: 'Store created successfully' });
+        }
+      });
+    }
+  });
+};
+
+
+
+
+
+
+
+
+
+
