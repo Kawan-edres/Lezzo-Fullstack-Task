@@ -1,0 +1,11 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+build/
+
+# Environment variables
+.env
+
+# Editor files
+.vscode/
