@@ -5,6 +5,8 @@
 The project is an admin dashboard that i have built it  using React js, Redux Toolkit (state manegement), and Ant Design for design purposes                in the client-side. 
 On the server-side, it utilizes Node.js, Express.js, and MySQL for data storage. The main objective is to create a store where each store can have categories, and each category can have products.
 
+
+
 ## Project Setup
 
 To set up the project, follow the steps below:
@@ -25,7 +27,7 @@ To set up the project, follow the steps below:
   npm run  dev
   ```
 
-###Server Setup
+### Server Setup
 
 1. Clone the repository (if not already done).
 2. Navigate to the root folder.
@@ -39,11 +41,11 @@ To set up the project, follow the steps below:
    ```
 
 
-###Database Setup
+### Database Setup
 
 1.Import the provided MySQL file into your MySQL database for testing purposes.
 
-###API Testing
+### API Testing
 1.Use the provided Postman file in JSON format to test the API endpoints.
 
 
