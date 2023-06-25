@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const { Header, Content, Sider } = Layout;
 
 const navigationItems = [
-  { key: 1, path: '/', label: 'Analytics' },
-  { key: 2, path: '/store', label: 'Stores List ' },
-  { key: 3, path: '/virtualizedstore', label: 'Virtualized Store ' },
+  { key: "0", path: '/', label: 'Analytics' },
+  { key: "1", path: '/store', label: 'Stores List ' },
+  { key: "2", path: '/virtualizedstore', label: 'Virtualized Store ' },
   
 ];
 

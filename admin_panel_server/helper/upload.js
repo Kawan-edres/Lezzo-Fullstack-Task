@@ -1,6 +1,7 @@
 const multer = require('multer');
 
 const upload = multer({
+  //console.log()
   limits: { fieldSize: 25 * 1024 * 1024 },
   storage: multer.diskStorage({
     destination(req, file, cb) {
