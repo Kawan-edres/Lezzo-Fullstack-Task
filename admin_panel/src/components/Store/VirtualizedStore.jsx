@@ -46,7 +46,7 @@ const VirtualizedStore = () => {
         total: total, // Use the total property from the response data
       }}
       onChange={handleTableChange}
-      scroll={{ y: 500 }} // Set a fixed height for the table container to enable vertical scrolling
+      scroll={{ y: 600 }} // Set a fixed height for the table container to enable vertical scrolling
     />
   );
 };

@@ -2,18 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async (storeId) => {
-  const response = await fetch(`http://localhost:3000/categories/store/${storeId}`);
+  const response = await fetch(`http://localhost:3000/api/categories/store/${storeId}`);
   const data = await response.json();
   return data;
 });
 export const fetchTotalCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await fetch(`http://localhost:3000/categories`);
+  const response = await fetch(`http://localhost:3000/api/categories`);
   const data = await response.json();
   return data;
 });
 
 export const createCategory = createAsyncThunk('categories/createCategory', async (categoryData) => {
-  const response = await fetch('http://localhost:3000/categories', {
+  const response = await fetch('http://localhost:3000/api/categories', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createCategory = createAsyncThunk('categories/createCategory', asyn
 });
 
 export const deleteCategory = createAsyncThunk('categories/deleteCategory', async (categoryId) => {
-  const response = await fetch(`http://localhost:3000/categories/${categoryId}`, {
+  const response = await fetch(`http://localhost:3000/api/categories/${categoryId}`, {
     method: 'DELETE',
   });
   const data = await response.json();
@@ -33,7 +33,7 @@ export const deleteCategory = createAsyncThunk('categories/deleteCategory', asyn
 });
 
 export const updateCategory = createAsyncThunk('categories/updateCategory', async (category) => {
-  const response = await fetch(`http://localhost:3000/categories/${category.id}`, {
+  const response = await fetch(`http://localhost:3000/api/categories/${category.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

@@ -2,18 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (categoryId) => {
-  const response = await fetch(`http://localhost:3000/products/category/${categoryId}`);
+  const response = await fetch(`http://localhost:3000/api/products/category/${categoryId}`);
   const data = await response.json();
   return data;
 });
 export const fetchTotalProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await fetch(`http://localhost:3000/products`);
+  const response = await fetch(`http://localhost:3000/api/products`);
   const data = await response.json();
   return data;
 });
 
 export const createProduct = createAsyncThunk('products/createProduct', async (productData) => {
-  const response = await fetch('http://localhost:3000/products', {
+  const response = await fetch('http://localhost:3000/api/products', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const createProduct = createAsyncThunk('products/createProduct', async (p
 });
 
 export const deleteProduct = createAsyncThunk('products/deleteProduct', async (productId) => {
-  const response = await fetch(`http://localhost:3000/products/${productId}`, {
+  const response = await fetch(`http://localhost:3000/api/products/${productId}`, {
     method: 'DELETE',
   });
   const data = await response.json();
@@ -33,7 +33,7 @@ export const deleteProduct = createAsyncThunk('products/deleteProduct', async (p
 });
 
 export const updateProduct = createAsyncThunk('products/updateProduct', async (product) => {
-  const response = await fetch(`http://localhost:3000/products/${product.id}`, {
+  const response = await fetch(`http://localhost:3000/api/products/${product.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

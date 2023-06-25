@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchStoreData = createAsyncThunk('stores/fetchStores', async () => {
-  const response = await fetch("http://localhost:3000/stores");
+  const response = await fetch("http://localhost:3000/api/stores");
   const data = await response.json();
   return data;
 });
@@ -10,7 +10,7 @@ export const fetchStoreData = createAsyncThunk('stores/fetchStores', async () =>
 export const fetchPaginatedStoreData = createAsyncThunk(
   'stores/fetchPaginatedStores',
   async ({ pageSize, page }) => {
-    const url = `http://localhost:3000/stores/paginated?pageSize=${pageSize}&page=${page}`;
+    const url = `http://localhost:3000/api/stores/paginated?pageSize=${pageSize}&page=${page}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -19,7 +19,7 @@ export const fetchPaginatedStoreData = createAsyncThunk(
 
 
 export const submitFormData = createAsyncThunk('stores/submitFormData', async (formData) => {
-  const response = await fetch('http://localhost:3000/stores', {
+  const response = await fetch('http://localhost:3000/api/stores', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export const submitFormData = createAsyncThunk('stores/submitFormData', async (f
 });
 
 export const deleteStore = createAsyncThunk('stores/deleteStore', async (storeId) => {
-  const response = await fetch(`http://localhost:3000/stores/${storeId}`, {
+  const response = await fetch(`http://localhost:3000/api/stores/${storeId}`, {
     method: 'DELETE',
   });
   const data = await response.json();
@@ -39,7 +39,7 @@ export const deleteStore = createAsyncThunk('stores/deleteStore', async (storeId
 });
 
 export const updateStore = createAsyncThunk('stores/updateStore', async (store) => {
-  const response = await fetch(`http://localhost:3000/stores/${store.id}`, {
+  const response = await fetch(`http://localhost:3000/api/stores/${store.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

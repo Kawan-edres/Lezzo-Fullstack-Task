@@ -22,9 +22,9 @@
   app.use(express.urlencoded({ extended: true }));
 
   //routes
-  app.use('/stores', storesRoutes);
-  app.use('/categories', categoriesRoutes);
-  app.use('/products', productsRoutes);
+  app.use('/api/stores', storesRoutes);
+  app.use('/api/categories', categoriesRoutes);
+  app.use('/api/products', productsRoutes);
   
   
   //middlewares
