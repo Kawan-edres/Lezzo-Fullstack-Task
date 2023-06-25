@@ -43,7 +43,8 @@ To set up the project, follow the steps below:
 
 ### Database Setup
 
-1.Import the provided MySQL file into your MySQL database for testing purposes.
+1.Import the provided MySQL file into your MySQL database for testing purposes.]
+and i have sat .env.example file in the root fo the repository for Database connection purposes 
 
 ### API Testing
 1.Use the provided Postman file in JSON format to test the API endpoints.
