@@ -71,11 +71,7 @@ const Product = () => {
           <img
             src={`${image}`}
             alt="Logo"
-            style={{
-              width: "50px",
-              aspectRatio: 1,
-              objectFit: "cover",
-            }}
+            
           />
         );
       },
@@ -135,7 +131,7 @@ const Product = () => {
           </Button>
         </div>
       </div>
-      <Table dataSource={productData} columns={columns} rowKey="id" />
+      <Table dataSource={productData} columns={columns} rowKey="id"  pagination={false} />
       <CreateProductModal
         handleCancel={handleCancel}
         isModalVisible={isModalVisible}

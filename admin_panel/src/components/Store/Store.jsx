@@ -80,11 +80,7 @@
 
             src={`${logo}`}
             alt="Logo"
-              style={{
-                width: "50px",
-                aspectRatio: 1,
-                objectFit: "cover"
-              }}
+              
             />
           );
         },
@@ -137,7 +133,7 @@
             </Button>
           </div>
         </div>
-        <Table dataSource={storeData} columns={columns} rowKey="id" />
+        <Table dataSource={storeData} columns={columns} rowKey="id"   pagination={false} />
         <EditModal
           handleCancel={handleCancel}
           isEditModalVisible={isEditModalVisible}

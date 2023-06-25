@@ -72,11 +72,7 @@ const StoreCategory = () => {
           <img
             src={`${image}`}
             alt="Logo"
-            style={{
-              width: "50px",
-              aspectRatio: 1,
-              objectFit: "cover",
-            }}
+            
           />
         );
       },
@@ -121,7 +117,7 @@ const StoreCategory = () => {
       >
         <div>
           <Button type="primary" >
-          <Link to={`/`}>Back to Stores List</Link>
+          <Link to={`/store`}>Back to Stores List</Link>
           </Button>
           <br />
           <h1> Category List for Sotre {storeId} </h1>
@@ -133,16 +129,16 @@ const StoreCategory = () => {
           </Button>
         </div>
       </div>
-      <Table dataSource={categoryData} columns={columns} rowKey="id" />
-      <EditCategoryModal
-        handleCancel={handleCancel}
-        isModalVisible={isModalVisible}
-        editedItem={editedItem}
-        />
+      <Table dataSource={categoryData} columns={columns} rowKey="id"  pagination={false} />
       <CreateCategoryModal
-        isEditModalVisible={isEditModalVisible}
+        isEditModalVisible={isModalVisible}
         handleCancel={handleCancel}
       />
+      <EditCategoryModal
+        handleCancel={handleCancel}
+        isModalVisible={isEditModalVisible}
+        editedItem={editedItem}
+        />
     </>
   );
 };

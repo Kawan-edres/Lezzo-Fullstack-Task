@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 const { Header, Content, Sider } = Layout;
 
 const navigationItems = [
-  { key: '1', path: '/', label: 'Stores' },
- 
+  { key: 1, path: '/', label: 'Analytics' },
+  { key: 2, path: '/store', label: 'Stores List ' },
+  { key: 3, path: '/virtualizedstore', label: 'Virtualized Store ' },
   
 ];
 
@@ -31,7 +32,7 @@ const   SideBar = ({children}) => {
           
         </div> 
         <div style={{ padding: '10px' }}>
-          <Menu theme="dark" mode="vertical" defaultSelectedKeys={['1']}>
+          <Menu theme="dark" mode="vertical" defaultSelectedKeys={['0']}>
             {navigationItems.map((item,id) => (
                 <Menu.Item key={id}>
                   <Link to={item.path} style={{ display: 'block', padding: '5px 0' }}>
@@ -43,7 +44,7 @@ const   SideBar = ({children}) => {
         </div>
       </Sider>
       <Layout>
-        <Header style={{ background: '#fff', padding: 0,marginLeft:10 }}>LEZZO Task</Header>
+        <Header style={{ background: '#fff', paddingLeft:20,marginLeft:10 }}>LEZZO Task</Header>
         <Content style={{ margin: '16px', minHeight: 0 }}>
           <div style={{ background: '#fff', padding: 24, minHeight: 'calc(100vh - 48px)' }}>
             {children}

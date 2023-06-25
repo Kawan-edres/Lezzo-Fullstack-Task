@@ -1,6 +1,49 @@
-const upload = require("../helper/upload");
 const pool = require("../db/db");
 const { BadRequestError, NotFoundError } = require("../errors");
+
+
+const getStoresPaginated = (req, res, next) => {
+  const { page, pageSize } = req.query;
+  const pageNumber = parseInt(page);
+  const limit = parseInt(pageSize);
+
+  if (!pageNumber || !limit || pageNumber <= 0 || limit <= 0) {
+    next(new BadRequestError("Invalid page number or page size"));
+    return;
+  }
+
+  const offset = (pageNumber - 1) * limit;
+
+  // Query to fetch the total count of stores
+  const countQuery = "SELECT COUNT(*) AS total FROM stores";
+
+  // Query to fetch the paginated data
+  const dataQuery = "SELECT * FROM stores LIMIT ?, ?";
+
+  pool.query(countQuery, (countError, countResults) => {
+    if (countError) {
+      next(new NotFoundError("Error retrieving store count from the database!"));
+    } else {
+      const total = countResults[0].total; // Extract the total count from the result
+
+      // Execute the query to fetch the paginated data
+      pool.query(dataQuery, [offset, limit], (dataError, dataResults) => {
+        if (dataError) {
+          next(new NotFoundError("Error retrieving paginated store data from the database!"));
+        } else {
+          // Return the paginated data along with the total count
+          res.status(200).json({
+            pageNumber: pageNumber,
+            pageSize: limit,
+            total: total,
+            data: dataResults
+          });
+        }
+      });
+    }
+  });
+};
+
 
 
 // Create a new store
@@ -98,4 +141,4 @@ const updateStore = (req, res, next) => {
 
 
 
-module.exports = { createStore, getAllStores,getSingleStore, deleteStore, updateStore };
+module.exports = { createStore, getAllStores,getSingleStore, getStoresPaginated, deleteStore, updateStore };
