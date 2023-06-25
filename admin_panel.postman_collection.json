@@ -15,11 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/stores",
+							"raw": "{{URL}}/api/stores",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores"
 							]
 						}
@@ -41,11 +42,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/stores/1",
+							"raw": "{{URL}}/api/stores/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores",
 								"1"
 							]
@@ -59,11 +61,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/stores/5",
+							"raw": "{{URL}}/api/stores/5",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores",
 								"5"
 							]
@@ -77,11 +80,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/stores/1",
+							"raw": "{{URL}}/api/stores/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores",
 								"1"
 							]
@@ -104,11 +108,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/stores",
+							"raw": "{{URL}}/api/stores",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores"
 							]
 						}
@@ -121,11 +126,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/stores/paginated?pageSize=10&page=1",
+							"raw": "{{URL}}/api/stores/paginated?pageSize=10&page=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"stores",
 								"paginated"
 							],
@@ -163,11 +169,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/categories",
+							"raw": "{{URL}}/api/categories",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"categories"
 							]
 						}
@@ -180,11 +187,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/categories/3",
+							"raw": "{{URL}}/api/categories/3",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"categories",
 								"3"
 							]
@@ -198,11 +206,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/categories/store/1",
+							"raw": "{{URL}}/api/categories/store/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"categories",
 								"store",
 								"1"
@@ -226,11 +235,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/categories/1",
+							"raw": "{{URL}}/api/categories/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"categories",
 								"1"
 							]
@@ -244,13 +254,32 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/categories/1",
+							"raw": "{{URL}}/api/categories/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"categories",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTotalCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"categories"
 							]
 						}
 					},
@@ -276,11 +305,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/products",
+							"raw": "{{URL}}/api/products",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products"
 							]
 						}
@@ -293,11 +323,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/products/1",
+							"raw": "{{URL}}/api/products/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products",
 								"1"
 							]
@@ -311,11 +342,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/products/category/1",
+							"raw": "{{URL}}/api/products/category/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products",
 								"category",
 								"1"
@@ -339,11 +371,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/products/1",
+							"raw": "{{URL}}/api/products/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products",
 								"1"
 							]
@@ -357,11 +390,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/products/1",
+							"raw": "{{URL}}/api/products/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products",
 								"1"
 							]
@@ -375,11 +409,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/products",
+							"raw": "{{URL}}/api/products",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"api",
 								"products"
 							]
 						}

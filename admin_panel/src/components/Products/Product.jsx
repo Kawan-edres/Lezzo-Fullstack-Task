@@ -77,7 +77,7 @@ const Product = () => {
       },
     },
     {
-      title: "Price",
+      title: "Price ($)",
       dataIndex: "price",
       key: "price",
     },
