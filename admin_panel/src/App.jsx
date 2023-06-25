@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import SideBar from './components/SideBar';
 import NotFound from './NotFound';
-import StoreCount from './components/Store/StoreCount';
-import VirtualStoreList from './components/Store/VirtualizedStore';
 
+
+const Product = lazy(() => import('./components/Products/Product'));
 const Store = lazy(() => import('./components/Store/Store'));
 const Category = lazy(() => import('./components/Category/Category'));
-const Product = lazy(() => import('./components/Products/Product'));
+const VirtualStoreList = lazy(() => import('./components/Store/VirtualizedStore'));
+const Analytics = lazy(() => import('./components/Analytics'));
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/store" element={<Store />} />
-            <Route index element={<StoreCount />} />
+            <Route index element={<Analytics />} />
             <Route path="/virtualizedstore" element={<VirtualStoreList />} />
             <Route path="/categories/store/:storeId" element={<Category />} />
             <Route path="/products/category/:categoryId" element={<Product />} />

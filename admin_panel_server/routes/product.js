@@ -5,10 +5,11 @@ const {
   getAllProducts,
   getSingleProduct,
   deleteProduct,
-  updateProduct
+  updateProduct,
+  getTotalAllProducts
 } = require("../controllers/products");
 
-router.route("/").post(createProduct);
+router.route("/").get(getTotalAllProducts).post(createProduct);
 router.route("/:productId").get(getSingleProduct).delete(deleteProduct).put(updateProduct);
 router.route("/category/:categoryId").get(getAllProducts);
 

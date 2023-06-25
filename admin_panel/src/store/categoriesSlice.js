@@ -6,6 +6,11 @@ export const fetchCategories = createAsyncThunk('categories/fetchCategories', as
   const data = await response.json();
   return data;
 });
+export const fetchTotalCategories = createAsyncThunk('categories/fetchCategories', async () => {
+  const response = await fetch(`http://localhost:3000/categories`);
+  const data = await response.json();
+  return data;
+});
 
 export const createCategory = createAsyncThunk('categories/createCategory', async (categoryData) => {
   const response = await fetch('http://localhost:3000/categories', {

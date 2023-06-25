@@ -6,6 +6,11 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async (c
   const data = await response.json();
   return data;
 });
+export const fetchTotalProducts = createAsyncThunk('products/fetchProducts', async () => {
+  const response = await fetch(`http://localhost:3000/products`);
+  const data = await response.json();
+  return data;
+});
 
 export const createProduct = createAsyncThunk('products/createProduct', async (productData) => {
   const response = await fetch('http://localhost:3000/products', {

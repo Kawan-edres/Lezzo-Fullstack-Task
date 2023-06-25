@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchStoreData } from '../../store/storesSlice';
+import { fetchTotalProducts } from '../../store/productsSlice';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
 
-const StoreCount = () => {
+const ProductCount = () => {
   const dispatch = useDispatch();
-  const stores = useSelector(state => state.store.data);
+  const products = useSelector(state => state.products.data);
 
   useEffect(() => {
-    dispatch(fetchStoreData());
+    dispatch(fetchTotalProducts());
   }, [dispatch]);
 
   return (
@@ -20,14 +20,13 @@ const StoreCount = () => {
             
       <Card
         style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-        cover={<div style={{ fontSize: '48px', fontWeight: 'bold' }}>{stores.length}</div>}
-        
+        cover={<div style={{ fontSize: '48px', fontWeight: 'bold' }}>{products.length}</div>}
       >
-        <Meta title="Total Stores" />
+        <Meta title="Total Products" />
       </Card>
         </div>
     </Link>
   );
 };
 
-export default StoreCount;
+export default ProductCount;

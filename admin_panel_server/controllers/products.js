@@ -47,6 +47,19 @@ const getAllProducts = (req, res,next) => {
     }
   });
 };
+// Get all Total products
+const getTotalAllProducts = (req, res,next) => {
+  const { categoryId } = req.params;
+
+  const query = "SELECT * FROM products";
+  pool.query(query, [], (error, results) => {
+    if (error) {
+      next( new NotFoundError(`No products found!`))
+    } else {
+      res.status(200).json(results);
+    }
+  });
+};
 
 // Get a single product
 const getSingleProduct = (req, res, next) => {
@@ -111,4 +124,4 @@ const updateProduct = (req, res,next) => {
   });
 };
 
-module.exports = { createProduct, getAllProducts,getSingleProduct, deleteProduct, updateProduct };
+module.exports = { createProduct, getAllProducts,getSingleProduct, deleteProduct, updateProduct,getTotalAllProducts };

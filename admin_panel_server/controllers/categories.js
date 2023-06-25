@@ -49,6 +49,18 @@ const getAllCategories = (req, res,next) => {
     }
   });
 };
+// Get all categories for a store
+const getTotalAllCategories = (req, res,next) => {
+
+  const query = "SELECT * FROM categories ";
+  pool.query(query, [], (error, results) => {
+    if (error) {
+      next( new NotFoundError(`No categories found!`))
+    } else {
+      res.status(200).json(results);
+    }
+  });
+};
 
 // Get a single category
 const getSingleCategory = (req, res, next) => {
@@ -117,4 +129,4 @@ const deleteCategory = (req, res,next) => {
   };
 
 
-module.exports = { createCategory, getAllCategories,getSingleCategory, deleteCategory, updateCategory };
+module.exports = { createCategory, getAllCategories,getSingleCategory, deleteCategory, updateCategory,getTotalAllCategories};

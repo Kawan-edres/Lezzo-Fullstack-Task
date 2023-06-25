@@ -5,10 +5,11 @@ const {
   getAllCategories,
   getSingleCategory,
   deleteCategory,
-  updateCategory
+  updateCategory,
+  getTotalAllCategories
 } = require("../controllers/categories");
 
-router.route("/").post(createCategory);
+router.route("/").get(getTotalAllCategories).post(createCategory);
 router.route("/:categoryId").get(getSingleCategory).delete(deleteCategory).put(updateCategory);
 router.route("/store/:storeId").get(getAllCategories);
 
